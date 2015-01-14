@@ -1,0 +1,137 @@
+@import url(//fonts.googleapis.com/css?family=Arvo:400,700,400italic);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:600,700);
+
+@font-face {
+  font-family: "social";
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.clearfix {
+  zoom: 1;
+  clear: both;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+
+body, html {
+	font-weight: 300;
+	line-height: 1.7em;
+	height: 100%;
+	width: 100%;
+	font-family:'Brandon Grotesque',Helvetica,Arial,sans-serif;
+	-webkit-font-smoothing:none;
+	font-size: 1.0em;
+	background: #141414;
+	position: relative;
+	@include transition (background .3s ease);
+}
+.logo {
+	position: fixed;
+	top: 20px;
+	left: 5%;
+	width: 70px;
+	height: 41px;
+}
+.go_black {
+	background: #000000;
+}
+img {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+h2 {
+	font-size:8.0em;
+	line-height: 1.0em;
+	// opacity: 0;
+	font-weight: 300;
+	text-transform: uppercase;
+	background: url('http://i.imgur.com/3W7yR.jpg');
+	// background: url('http://www.urbansplatter.com/wp-content/uploads/2014/08/denver-night-cityscape-4-12.jpg');
+	/*background: url('https://unsplash.imgix.net/photo-1414170562806-9d670e90c091?fit=crop&fm=jpg&h=700&q=75&w=1050');*/
+	background-size: cover;
+	-webkit-background-clip: text;
+	padding: 0 5%;
+	z-index: 11;
+	position: relative;
+	// @include transform(translateY(300px));
+	@include transition(transform .3s ease-in-out 1.5, opacity .7s ease 0);
+}
+
+h2 span {
+	color: rgba(63,63,63,1);
+	opacity: 0;
+	/*text-shadow: 1px -1px 1px rgba(0, 0, 0, .5);*/
+	-webkit-transition:color .2s linear .5s;
+	-moz-transition: color .2s linear .5s;
+	-o-transition: color .2s linear .5s;
+	transition: color .2s linear .5s;
+	// @include transform(translate(100px, 50px));
+	// @include transition(transform .3s ease-in-out 1.5, opacity .7s ease 0);
+}
+h2 span:nth-child(even) {
+	opacity: 1;
+	@include transform(translateY(-100px));
+	@include transition(all .5s ease .3);
+}
+h2 span:nth-child(odd) {
+	opacity: 1;
+	@include transform(translateY(-50px));
+	@include transition(all .5s ease .5);
+}
+
+h2 span:hover {
+	color: rgba(63,63,63,.1);
+	/*text-shadow: 1px -1px 1px rgba(0, 0, 0, 0);*/
+	-webkit-transition:color .2s linear 0;
+	-moz-transition: color .2s linear 0;
+	-o-transition: color .2s linear 0;
+	transition: color .2s linear 0;
+}
+// .active h2 {
+// 	opacity: 1;
+// 	@include transform(translateY(0px));
+// }
+.active h2 span {
+	opacity: 1;
+}
+.active h2 span:nth-child(even) {
+	opacity: 1;
+	@include transform(translateY(0px));
+}
+.active h2 span:nth-child(odd) {
+	opacity: 1;
+	@include transform(translateY(0px));
+}
+.quote_up span:nth-child(even) {
+	@include transform(translate(-100px, 50px));
+}
+section {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -400px;
+	width: 800px;
+	display: block;
+	z-index: 1;
+	-webkit-transform:translateZ(0px);
+}

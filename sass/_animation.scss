@@ -1,0 +1,79 @@
+@include keyframes(scale_q) {
+  from {
+    @include transform(scale(0));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+
+
+@include keyframes(cloud1) {
+  0% {
+    @include transform(translateX(0%))
+  }
+  50% {
+    @include transform(translateX(500%))
+  }
+  100% {
+    @include transform(translateX(0%))
+  }
+}
+
+
+@include keyframes(cloud2) {
+  0% {
+    @include transform(translateX(0%))
+  }
+  50% {
+    @include transform(translateX(400%))
+  }
+  100% {
+    @include transform(translateX(0%))
+  }
+}
+
+
+@include keyframes(cloud3) {
+  0% {
+    @include transform(translateX(0%))
+  }
+  50% {
+    @include transform(translateX(-400%))
+  }
+  100% {
+    @include transform(translateX(0%))
+  }
+}
+
+@include keyframes(cloud3) {
+  0% {
+    @include transform(translateX(0%))
+  }
+  50% {
+    @include transform(translateX(-400%))
+  }
+  100% {
+    @include transform(translateX(0%))
+  }
+}
+
+
+@include keyframes(bird) {
+  0% {
+    @include transform(translateX(0px))
+  }
+  100% {
+    @include transform(translateX(1600px))
+  }
+}
+
+
+@include keyframes(biker) {
+  0% {
+    @include transform(rotate(0deg))
+  }
+  100% {
+    @include transform(rotate(-360deg))
+  }
+}

@@ -1,0 +1,163 @@
+html {
+	@extend %extend_1;
+}
+body {
+	@extend %extend_1;
+}
+#superContainer {
+	height: 100%;
+	position: relative;
+	touch-action: none;
+	z-index: 2;
+}
+#fullpage {
+	position: relative;
+	z-index: 3;
+}
+.fp-section {
+	position: relative;
+	//Instead of the line below you could use @includebox-sizing($bs)
+	box-sizing: border-box;
+	&.fp-table {
+		@extend %extend_2;
+	}
+}
+.fp-slide {
+	float: left;
+	height: 100%;
+	display: block;
+	&.fp-table {
+		@extend %extend_2;
+	}
+}
+.fp-slidesContainer {
+	height: 100%;
+	display: block;
+	float: left;
+	position: relative;
+	background: transparent;
+}
+.fp-slides {
+	z-index: 1;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all 0.3s ease-out;
+}
+.fp-tableCell {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+.fp-controlArrow {
+	position: absolute;
+	z-index: 4;
+	top: 50%;
+	cursor: pointer;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	margin-top: -38px;
+	&.fp-prev {
+		left: 15px;
+		width: 0;
+		border-width: 38.5px 34px 38.5px 0;
+		border-color: transparent $white transparent transparent;
+	}
+	&.fp-next {
+		right: 15px;
+		border-width: 38.5px 0 38.5px 34px;
+		border-color: transparent transparent transparent $white;
+	}
+}
+.fp-scrollable {
+	overflow: scroll;
+}
+.fp-notransition {
+	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: none !important;
+}
+#fp-nav {
+	position: fixed;
+	z-index: 100;
+	margin-top: -32px;
+	top: 50%;
+	opacity: 1;
+	&.right {
+		right: 17px;
+	}
+	&.left {
+		left: 17px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			@extend %extend_3;
+			a {
+				@extend %extend_4;
+				span {
+					@extend %extend_5;
+				}
+				&.active span {
+					background: $dark_gray;
+				}
+			}
+			.fp-tooltip {
+				position: absolute;
+				top: -2px;
+				color: $white;
+				font-size: 14px;
+				white-space: nowrap;
+				max-width: 220px;
+				overflow: hidden;
+				display: block;
+				opacity: 0;
+				width: 0;
+				&.right {
+					right: 20px;
+				}
+				&.left {
+					left: 20px;
+				}
+			}
+			&:hover .fp-tooltip {
+				//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: opacity 0.2s ease-in;
+				width: auto;
+				opacity: 1;
+			}
+		}
+	}
+}
+.fp-slidesNav {
+	position: absolute;
+	z-index: 4;
+	left: 50%;
+	opacity: 1;
+	&.bottom {
+		bottom: 17px;
+	}
+	&.top {
+		top: 17px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			@extend %extend_3;
+			display: inline-block;
+			a {
+				@extend %extend_4;
+				span {
+					@extend %extend_5;
+				}
+				&.active span {
+					background: $dark_gray;
+				}
+			}
+		}
+	}
+}

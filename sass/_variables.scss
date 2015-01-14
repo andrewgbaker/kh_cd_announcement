@@ -1,0 +1,103 @@
+$dark_gray: #333333;
+$light_gray: #999999;
+$black: black;
+$white: white;
+$trans_white: rgba(255, 255, 255, 0.5);
+$trans_black: rgba(0, 0, 0, 0.5);
+$crew_orange: #a53e1f;
+
+$break-small: 480px;
+$break-med: 768px;
+$break-large: 900px;
+
+$didot: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+@mixin bgCover {
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
+@mixin btnMain {
+	background: #f17a54;
+	@include background-image(linear-gradient(#f17a54 0, #e36a44 100%));
+	font-family: 'Arvo', serif;
+	margin: 20px auto;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	padding: 10px 8px;
+	display: inline-block;
+	position: relative;
+	z-index: 18;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: -webkit-box-shadow 0.3s ease;
+	-moz-transition: -moz-box-shadow 0.3s ease;
+	transition: box-shadow 0.3s ease;
+	&:hover {
+		background: #e36a44;
+		@include background-image(linear-gradient(#e36a44 0, #ce501a 100%));
+		color: white;
+		text-decoration: none;
+		-webkit-box-shadow: 0 0 3px 2px #999999;
+	    -moz-box-shadow: 0 0 3px 2px #999999;
+	    box-shadow: 0 3px 2px #999999;
+	}
+}
+
+//@extend-elements
+//original selectors
+//html, body
+%extend_1 {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+//original selectors
+//.fp-section.fp-table, .fp-slide.fp-table
+%extend_2 {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+//original selectors
+//#fp-nav ul li, .fp-slidesNav ul li
+%extend_3 {
+	display: block;
+	width: 14px;
+	height: 13px;
+	margin: 7px;
+	position: relative;
+}
+
+//original selectors
+//#fp-nav ul li a, .fp-slidesNav ul li a
+%extend_4 {
+	display: block;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+//original selectors
+//#fp-nav ul li a span, .fp-slidesNav ul li a span
+%extend_5 {
+	top: 2px;
+	left: 2px;
+	width: 8px;
+	height: 8px;
+	border: 1px solid $black;
+	background: rgba(0, 0, 0, 0);
+	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+}
