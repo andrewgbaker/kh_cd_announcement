@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Arvo:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,400);
 @import url(//fonts.googleapis.com/css?family=Open+Sans:600,700);
 
 @font-face {
@@ -36,18 +36,10 @@ body, html {
 	height: 100%;
 	width: 100%;
 	font-family:'Brandon Grotesque',Helvetica,Arial,sans-serif;
-	-webkit-font-smoothing:none;
 	font-size: 1.0em;
-	background: #141414;
+	background: #fff;
 	position: relative;
 	@include transition (background .3s ease);
-}
-.logo {
-	position: fixed;
-	top: 20px;
-	left: 5%;
-	width: 70px;
-	height: 41px;
 }
 .go_black {
 	background: #000000;
@@ -59,17 +51,29 @@ img {
   max-width: 100%;
 }
 
+.site_wrap {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	width: 100%;
+	height: 100%;
+	background: #141414;
+	@include transition(transform .7s $ease-out-quart);
+}
+
 h2 {
 	font-size:8.0em;
 	line-height: 1.0em;
 	// opacity: 0;
 	font-weight: 300;
-	text-transform: uppercase;
+	-webkit-font-smoothing:antialiased;
+	// text-transform: uppercase;
+	font-family: "Vollkorn", Georgia, serif; 
 	background: url('http://i.imgur.com/3W7yR.jpg');
 	// background: url('http://www.urbansplatter.com/wp-content/uploads/2014/08/denver-night-cityscape-4-12.jpg');
 	/*background: url('https://unsplash.imgix.net/photo-1414170562806-9d670e90c091?fit=crop&fm=jpg&h=700&q=75&w=1050');*/
 	background-size: cover;
 	-webkit-background-clip: text;
+	// text-shadow: 1px 1px 0px #000000;
 	padding: 0 5%;
 	z-index: 11;
 	position: relative;
@@ -124,14 +128,4 @@ h2 span:hover {
 }
 .quote_up span:nth-child(even) {
 	@include transform(translate(-100px, 50px));
-}
-section {
-	position: fixed;
-	bottom: 0;
-	left: 50%;
-	margin-left: -400px;
-	width: 800px;
-	display: block;
-	z-index: 1;
-	-webkit-transform:translateZ(0px);
 }

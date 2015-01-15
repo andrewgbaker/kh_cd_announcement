@@ -15,6 +15,19 @@
 
 	
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+	WebFontConfig = { fontdeck: { id: '52527' } };
+
+	(function() {
+	  var wf = document.createElement('script');
+	  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	  wf.type = 'text/javascript';
+	  wf.async = 'true';
+	  var s = document.getElementsByTagName('script')[0];
+	  s.parentNode.insertBefore(wf, s);
+	})();
+	</script>
 
 	<!--[if IE]>
 		<script type="text/javascript">
@@ -27,15 +40,22 @@
 	<script type="text/javascript" src="js/libs/jquery.fullPage.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			// OPEN INFO PANEL
+			$('.info').on('click', function(){
+			    $('body').toggleClass('info_open');
+			});
+
+			// START FULLPAGE PLUGIN
 			$('#fullpage').fullpage({
 				// css3: false,
 				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
 				verticalCentered: true,
 				scrollingSpeed: 800,
-				easing: 'easeInQuart',
+				recordHistory: false,
+				easing: 'easeOutQuart',
 				onLeave: function(index, nextIndex, direction){
 
-					var bodyColor = $('body')
+					var bodyColor = $('.site_wrap')
 						upQuote = $('.active h2');
 		            //after leaving section 2
 		            if(index == 1 && direction =='down'){
@@ -84,23 +104,37 @@
 <body>
 
 	<div class="logo">
-		<img src="img/kh_logo.jpg" />
+		<img src="img/kh_logo.png" />
 	</div>
 
-	<div id="fullpage">	
-		<div class="section active" id="section0">
-			<h2>Age wrinkles the body. Quitting wrinkles the soul.</h2>
-		</div>
-		<div class="section" id="section1">
-			<h2>Simplicity is the ultimate sophistication.</h2>
-		</div>
-		<div class="section" id="section2"><h2>Age wrinkles the body. Quitting wrinkles the soul.</h2></div>
-		<div class="section" id="section3"><h2>Simplicity is the ultimate sophistication.</h2></div>
+	<div class="info">
+		<p>?</p>
 	</div>
 
-	<section>
-		<img src="img/corey.png" />
-	</section>
+	<aside>
+		<div>
+			<p>Karsh Hagan has hired Corey Favier as Executive Creative Director. Corey comes to us from St. Louis via Chicago and Boston.</p>
+		</div>	
+	</aside>
+
+	<div class="site_wrap">
+
+		<div id="fullpage">	
+			<div class="section active" id="section0">
+				<h2>Age wrinkles the body. Quitting wrinkles the soul.</h2>
+			</div>
+			<div class="section" id="section1">
+				<h2>Simplicity is the ultimate sophistication.</h2>
+			</div>
+			<div class="section" id="section2"><h2>Age wrinkles the body. Quitting wrinkles the soul.</h2></div>
+			<div class="section" id="section3"><h2>Simplicity is the ultimate sophistication.</h2></div>
+		</div>
+
+		<section>
+			<img src="img/corey.png" />
+		</section>
+
+	</div>
 
 </body>
 </html>
