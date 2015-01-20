@@ -1,79 +1,121 @@
-@include keyframes(scale_q) {
-  from {
-    @include transform(scale(0));
-  }
-  to {
-    @include transform(scale(1));
-  }
-}
-
-
-@include keyframes(cloud1) {
+@include keyframes(arrow) {
   0% {
-    @include transform(translateX(0%))
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
   }
   50% {
-    @include transform(translateX(500%))
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
   }
   100% {
-    @include transform(translateX(0%))
+    opacity: 1;
   }
 }
 
-
-@include keyframes(cloud2) {
+@include keyframes(arrow_bounce) {
   0% {
-    @include transform(translateX(0%))
+    bottom: 20px;
   }
   50% {
-    @include transform(translateX(400%))
+    bottom: 0px;
   }
   100% {
-    @include transform(translateX(0%))
+    bottom: 20px;
   }
 }
 
-
-@include keyframes(cloud3) {
+@include keyframes(text_appear) {
   0% {
-    @include transform(translateX(0%))
-  }
-  50% {
-    @include transform(translateX(-400%))
+    width: 100%;
   }
   100% {
-    @include transform(translateX(0%))
+    width: 0%;
   }
 }
 
-@include keyframes(cloud3) {
+@include keyframes(headline_fade) {
   0% {
-    @include transform(translateX(0%))
-  }
-  50% {
-    @include transform(translateX(-400%))
+    color: rgba(0,0,0,.0);
   }
   100% {
-    @include transform(translateX(0%))
+    color: rgba(0,0,0,.4);
   }
 }
 
-
-@include keyframes(bird) {
+@include keyframes(line_expand_up) {
   0% {
-    @include transform(translateX(0px))
+    top: 50%;
+    opacity: 0;
   }
   100% {
-    @include transform(translateX(1600px))
+    top: 0%;
+    opacity: 1;
   }
 }
 
-
-@include keyframes(biker) {
+@include keyframes(line_expand_down) {
   0% {
-    @include transform(rotate(0deg))
+    bottom: 50%;
+    opacity: 0;
   }
   100% {
-    @include transform(rotate(-360deg))
+    bottom: 0%;
+    opacity: 1;
   }
 }
+
+@include keyframes(info_fade) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(line_one) {
+  0% {
+    @include transform(translateY(-100%));
+  }
+  100% {
+    @include transform(translateY(0%));
+  }
+}
+@include keyframes(line_three) {
+  0% {
+    @include transform(translateY(100%));
+  }
+  100% {
+    @include transform(translateY(0%));
+  }
+}
+@include keyframes(line_two) {
+  0% {
+    @include transform(translateX(-100%));
+  }
+  100% {
+    @include transform(translateX(0%));
+  }
+}
+@include keyframes(line_four) {
+  0% {
+    @include transform(translateX(100%));
+  }
+  100% {
+    @include transform(translateX(0%));
+  }
+}
+@include keyframes(fade_load) {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
