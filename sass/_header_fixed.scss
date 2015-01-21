@@ -17,6 +17,11 @@
 		}
 	}
 }
+.fp-viewing-secondPage {
+	.logo img {
+		opacity: 1;
+	}
+}
 .info {
 	position: fixed;
 	top: 20px;
@@ -112,7 +117,7 @@ aside {
 	left: 50%;
 	margin-left: -20px;
 	bottom: 20px;
-	@include transition (margin .3s ease, opacity .5s ease .5s);
+	@include transition (margin .3s ease, bottom .5s ease .5s);
 	&:after {
 		content: '';
 		width: 20px;
@@ -127,7 +132,7 @@ aside {
 }
 
 .fp-viewing-firstPage .arrow {
-	@include animation(arrow_bounce 2.2s ease infinite);
+	bottom: 80px;
 }
 
 .slide_down {
@@ -187,17 +192,7 @@ aside {
 }
 
 .fp-viewing-firstPage {
-	.info, .logo, .arrow {
+	.info, .logo {
 		opacity: 0;
 	}
-}
-
-.fp-viewing-firstPage .home_arrow {
-	position: absolute;
-	opacity: 1;
-	left: 50%;
-	margin-left: -20px;
-	bottom: 50px;
-	right: auto;
-	@include animation(none);
 }

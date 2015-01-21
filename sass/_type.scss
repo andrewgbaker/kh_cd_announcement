@@ -1,19 +1,12 @@
 h2 {
-	font-size:8.0em;
+	font-size:6.5em;
 	line-height: 1.0em;
 	// opacity: 0;
 	font-weight: 300;
 	-webkit-font-smoothing:antialiased;
 	// text-transform: uppercase;
-	font-family: "Vollkorn", Georgia, serif; 
-	// background: url('http://i.imgur.com/3W7yR.jpg');
-	// background: url('https://ununsplash.imgix.net/43/WrZ1xIWJQY6UB8MEbWTd_IMG_9088_edt.jpg?q=75&fm=jpg&s=db808ea1c6f8dbad13ceb05e067666ad');
-	// background: url('http://www.urbansplatter.com/wp-content/uploads/2014/08/denver-night-cityscape-4-12.jpg');
-	background: url('https://unsplash.imgix.net/photo-1414170562806-9d670e90c091?fit=crop&fm=jpg&h=700&q=75&w=1050');
-	background-size: cover;
-	-webkit-background-clip: text;
-	// text-shadow: 1px 1px 0px #000000;
-	padding: 50px 5% 0;
+	font-family: "Liberator", Georgia, serif; 
+	padding: 50px 8% 0;
 	z-index: 11;
 	position: relative;
 	cursor: url('../img/cursor_text.svg'), auto;
@@ -114,24 +107,72 @@ h1 {
 	}
 }
 
-#section0 h2 {
-	background: url('http://karshhagan.com/img/hero_people.jpg');
-	background-size: cover;
-	-webkit-background-clip: text;
+// BACKGROUND IMAGES IN TEXT FOR BG-CLIP SUPPORTED BROWSERS
+.backgroundclip {
+	#section0 h2 {
+		background: url('http://karshhagan.com/img/hero_people.jpg');
+		background-size: cover;
+		-webkit-background-clip: text;
+	}
+
+	#section1 h2 {
+		background: url('../img/cloud_bg.jpg') no-repeat center center;
+		background-size: cover;
+		-webkit-background-clip: text;
+	}
+
+	#section2 h2 {
+		background: url('../img/city_night.jpg') no-repeat center center;
+		background-size: cover;
+		-webkit-background-clip: text;
+	}
+	#section4 h2 {
+		background: url('../img/road_bg.jpg') no-repeat center center;
+		background-size: cover;
+		-webkit-background-clip: text;
+	}
+
+	#section3 h2 {
+		background: url('../img/mountain_bg.jpg') no-repeat center center;
+		// font-family: 'Liberator', sans-serif;
+		background-size: cover;
+		-webkit-background-clip: text;
+	}
 }
 
-#section1 h2, #section3 h2 {
-	background: url('../img/mountain_bg.jpg') no-repeat center center;
-	// font-family: 'Liberator', sans-serif;
-	background-size: cover;
-	-webkit-background-clip: text;
-}
 #section0 h2, #section2 h2, #section3 h2 {
 	font-size: 6.8em;
 }
 
+#section0 {
+	background: url(../img/corey_white_feathered.jpg);
+	background-size: cover;
+	box-shadow: inset 0 0 0 20px #FFF, inset 0 0 0 40px #000;
+	p {
+		// position: absolute;
+		// right: 0px;
+		// width: 300px;
+		// font-size: 1.5em;
+		// text-align: left;
+		// -webkit-transform: rotate(-90deg);
+		// bottom: 150px;
+		// padding: 0;
+		// color: rgb(223, 37, 37);
+	}
+}
+.info_page {
+	background: $white;
+	h2 {
+		font-size: 4.8em;
+		background: url('../img/lake_bg.jpg');
+		background-size: cover;
+		-webkit-background-clip: text;
+		font-family: 'Brandon Grotesque';
+	}
+}
+
 h2 span {
-	color: rgba(63,63,63,.80);
+	color: rgba(63,63,63,.8);
 	/*text-shadow: 1px -1px 1px rgba(0, 0, 0, .5);*/
 	-webkit-transition:color .2s linear .5s;
 	-moz-transition: color .2s linear .5s;

@@ -50,12 +50,10 @@ body, html {
 	width: 100%;
 	font-family:'Brandon Grotesque',Helvetica,Arial,sans-serif;
 	font-size: 1.0em;
-	background: #141414;
-	position: relative;
-	@include transition (background .6s ease);
-}
-.go_black {
 	background: #000000;
+	position: relative;
+	text-align: center;
+	@include transition (background .6s ease);
 }
 img {
   margin: 0 auto;

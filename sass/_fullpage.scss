@@ -35,25 +35,6 @@ body {
 		position: relative;
 	}
 }
-#section0 {
-	background: url(../img/corey_white_feathered.jpg);
-	background-size: cover;
-	box-shadow: inset 0 0 0 20px #FFF, inset 0 0 0 40px #000;
-	p {
-		// position: absolute;
-		// right: 0px;
-		// width: 300px;
-		// font-size: 1.5em;
-		// text-align: left;
-		// -webkit-transform: rotate(-90deg);
-		// bottom: 150px;
-		// padding: 0;
-		// color: rgb(223, 37, 37);
-	}
-}
-.info_page {
-	background: $white;
-}
 .fp-section {
 	position: relative;
 	//Instead of the line below you could use @includebox-sizing($bs)

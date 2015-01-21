@@ -519,14 +519,12 @@ body, html {
   width: 100%;
   font-family: 'Brandon Grotesque',Helvetica,Arial,sans-serif;
   font-size: 1.0em;
-  background: #141414;
+  background: #000000;
   position: relative;
+  text-align: center;
   -webkit-transition: background 0.6s ease;
   -moz-transition: background 0.6s ease;
   transition: background 0.6s ease; }
-
-.go_black {
-  background: #000000; }
 
 img {
   margin: 0 auto;
@@ -636,14 +634,6 @@ img {
     color: #3f3f3f;
     padding-top: 40px;
     position: relative; }
-
-#section0 {
-  background: url(../img/corey_white_feathered.jpg);
-  background-size: cover;
-  box-shadow: inset 0 0 0 20px #FFF, inset 0 0 0 40px #000; }
-
-.info_page {
-  background: white; }
 
 .fp-section {
   position: relative;
@@ -770,6 +760,9 @@ img {
   .logo:hover img {
     opacity: 1; }
 
+.fp-viewing-secondPage .logo img {
+  opacity: 1; }
+
 .info {
   position: fixed;
   top: 20px;
@@ -868,9 +861,9 @@ aside {
   left: 50%;
   margin-left: -20px;
   bottom: 20px;
-  -webkit-transition: margin 0.3s ease, opacity 0.5s ease 0.5s;
-  -moz-transition: margin 0.3s ease, opacity 0.5s ease 0.5s;
-  transition: margin 0.3s ease, opacity 0.5s ease 0.5s; }
+  -webkit-transition: margin 0.3s ease, bottom 0.5s ease 0.5s;
+  -moz-transition: margin 0.3s ease, bottom 0.5s ease 0.5s;
+  transition: margin 0.3s ease, bottom 0.5s ease 0.5s; }
   .arrow:after {
     content: '';
     width: 20px;
@@ -885,9 +878,7 @@ aside {
     animation: arrow 2.2s ease infinite; }
 
 .fp-viewing-firstPage .arrow {
-  -webkit-animation: arrow_bounce 2.2s ease infinite;
-  -moz-animation: arrow_bounce 2.2s ease infinite;
-  animation: arrow_bounce 2.2s ease infinite; }
+  bottom: 80px; }
 
 .slide_down {
   -webkit-transform: translateY(0px);
@@ -926,30 +917,16 @@ aside {
   .info_open .info:hover:before, .info_open .info:hover:after {
     background: #999; }
 
-.fp-viewing-firstPage .info, .fp-viewing-firstPage .logo, .fp-viewing-firstPage .arrow {
+.fp-viewing-firstPage .info, .fp-viewing-firstPage .logo {
   opacity: 0; }
 
-.fp-viewing-firstPage .home_arrow {
-  position: absolute;
-  opacity: 1;
-  left: 50%;
-  margin-left: -20px;
-  bottom: 50px;
-  right: auto;
-  -webkit-animation: none;
-  -moz-animation: none;
-  animation: none; }
-
 h2 {
-  font-size: 8.0em;
+  font-size: 6.5em;
   line-height: 1.0em;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
-  font-family: "Vollkorn", Georgia, serif;
-  background: url("https://unsplash.imgix.net/photo-1414170562806-9d670e90c091?fit=crop&fm=jpg&h=700&q=75&w=1050");
-  background-size: cover;
-  -webkit-background-clip: text;
-  padding: 50px 5% 0;
+  font-family: "Liberator", Georgia, serif;
+  padding: 50px 8% 0;
   z-index: 11;
   position: relative;
   cursor: url("../img/cursor_text.svg"), auto;
@@ -1042,18 +1019,43 @@ h1 {
   text-align: center;
   margin: 0 auto; }
 
-#section0 h2 {
+.backgroundclip #section0 h2 {
   background: url("http://karshhagan.com/img/hero_people.jpg");
   background-size: cover;
   -webkit-background-clip: text; }
-
-#section1 h2, #section3 h2 {
+.backgroundclip #section1 h2 {
+  background: url("../img/cloud_bg.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-background-clip: text; }
+.backgroundclip #section2 h2 {
+  background: url("../img/city_night.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-background-clip: text; }
+.backgroundclip #section4 h2 {
+  background: url("../img/road_bg.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-background-clip: text; }
+.backgroundclip #section3 h2 {
   background: url("../img/mountain_bg.jpg") no-repeat center center;
   background-size: cover;
   -webkit-background-clip: text; }
 
 #section0 h2, #section2 h2, #section3 h2 {
   font-size: 6.8em; }
+
+#section0 {
+  background: url(../img/corey_white_feathered.jpg);
+  background-size: cover;
+  box-shadow: inset 0 0 0 20px #FFF, inset 0 0 0 40px #000; }
+
+.info_page {
+  background: white; }
+  .info_page h2 {
+    font-size: 4.8em;
+    background: url("../img/lake_bg.jpg");
+    background-size: cover;
+    -webkit-background-clip: text;
+    font-family: 'Brandon Grotesque'; }
 
 h2 span {
   color: rgba(63, 63, 63, 0.8);
