@@ -10,8 +10,6 @@ $break-small: 480px;
 $break-med: 768px;
 $break-large: 900px;
 
-$didot: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
-
 @mixin bgCover {
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;

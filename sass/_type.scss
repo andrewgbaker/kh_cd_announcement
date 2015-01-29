@@ -1,16 +1,17 @@
 h2 {
-	font-size:6.5em;
-	line-height: 1.0em;
+	font-size:5.0em;
+	line-height: 1em;
 	// opacity: 0;
 	font-weight: 300;
 	-webkit-font-smoothing:antialiased;
 	// text-transform: uppercase;
-	font-family: "Liberator", Georgia, serif; 
-	padding: 50px 8% 0;
+	font-family: "futura-pt", sans-serif; 
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 50px 10% 0;
 	z-index: 11;
 	position: relative;
-	cursor: url('../img/cursor_text.svg'), auto;
-	// @include transform(translateY(300px));
+	cursor: url('../img/cursor_text.png'), auto;
 	@include transition(transform .3s ease 1.5, opacity .7s ease 0);
 	.line {
 		&:after {
@@ -18,24 +19,12 @@ h2 {
 			width: 0%;
 			height: 6px;
 			position: absolute;
-			background: $black;
+			background: #151515;
 			left: 0;
 			top: 50%;
 			margin-top: -3px;
 			@include transition(width .7s $ease-out-quart 0s);
 		}
-	}
-}
-
-h3 {
-	font-size: 6em;
-	line-height: 2em;
-	font-family: 'Liberator', sans-serif;
-	letter-spacing: 40px;
-	text-align: center;
-	.line {
-		display: inline;
-		border-bottom: 5px solid $black;
 	}
 }
 
@@ -90,16 +79,12 @@ h1 {
 }
 
 .instructions {
-	// opacity: 0;
-	// @include animation(info_fade .7s ease 3.5s 1 forwards);
 	font-size: 1.4em;
 	max-width: 400px;
 }
 
 #section0  {
 	.instructions {
-		// opacity: 0;
-		// @include animation(info_fade .7s ease 3.5s 1 forwards);
 		font-size: 1.4em;
 		max-width: 500px;
 		text-align: center;
@@ -109,45 +94,57 @@ h1 {
 
 // BACKGROUND IMAGES IN TEXT FOR BG-CLIP SUPPORTED BROWSERS
 .backgroundclip {
-	#section0 h2 {
-		background: url('http://karshhagan.com/img/hero_people.jpg');
-		background-size: cover;
-		-webkit-background-clip: text;
+
+	#section0 img {
+		width: 600px;
+		max-width: 600px;
+		height: auto;
 	}
 
 	#section1 h2 {
-		background: url('../img/cloud_bg.jpg') no-repeat center center;
+		background: none;
+		background: -webkit-linear-gradient(transparent, transparent),
+             url('../img/bg_cloud.jpg') no-repeat center center;
 		background-size: cover;
 		-webkit-background-clip: text;
 	}
 
 	#section2 h2 {
-		background: url('../img/city_night.jpg') no-repeat center center;
+		background: none;
+		background: -webkit-linear-gradient(transparent, transparent),
+             url('../img/bg_nightcity.jpg') no-repeat center center;
 		background-size: cover;
 		-webkit-background-clip: text;
 	}
 	#section4 h2 {
-		background: url('../img/road_bg.jpg') no-repeat center center;
+		background: none;
+		background: -webkit-linear-gradient(transparent, transparent),
+             url('../img/bg_road.jpg') no-repeat center center;
 		background-size: cover;
 		-webkit-background-clip: text;
 	}
 
 	#section3 h2 {
-		background: url('../img/mountain_bg.jpg') no-repeat center center;
-		// font-family: 'Liberator', sans-serif;
+		background: none;
+		background: -webkit-linear-gradient(transparent, transparent),
+             url('../img/bg_mountain.jpg') no-repeat center center;
 		background-size: cover;
 		-webkit-background-clip: text;
 	}
 }
 
-#section0 h2, #section2 h2, #section3 h2 {
-	font-size: 6.8em;
+.no-backgroundclip {
+	#section1, #section2, #section3, #section4 {
+		h2 {
+			background: none;
+		}
+	}
 }
 
 #section0 {
-	background: url(../img/corey_white_feathered.jpg);
-	background-size: cover;
-	box-shadow: inset 0 0 0 20px #FFF, inset 0 0 0 40px #000;
+	// background: url(../img/corey_black.jpg);
+	// background-size: cover;
+	background: $black;
 	p {
 		// position: absolute;
 		// right: 0px;
@@ -163,16 +160,16 @@ h1 {
 .info_page {
 	background: $white;
 	h2 {
-		font-size: 4.8em;
-		background: url('../img/lake_bg.jpg');
-		background-size: cover;
-		-webkit-background-clip: text;
-		font-family: 'Brandon Grotesque';
+		font-family: 'brandon-grotesque';
+		font-size: 4.5em;
+		line-height: 1.2em;
+		font-weight: 300;
+		text-transform: none;
 	}
 }
 
 h2 span {
-	color: rgba(63,63,63,.8);
+	color: rgba(236, 236, 236, 0.5);
 	/*text-shadow: 1px -1px 1px rgba(0, 0, 0, .5);*/
 	-webkit-transition:color .2s linear .5s;
 	-moz-transition: color .2s linear .5s;
@@ -193,7 +190,7 @@ h2 span {
 // }
 
 h2 span:hover {
-	color: rgba(63,63,63,0);
+	color: rgba(236, 236, 236, 0);
 	/*text-shadow: 1px -1px 1px rgba(0, 0, 0, 0);*/
 	-webkit-transition:color .2s linear 0;
 	-moz-transition: color .2s linear 0;

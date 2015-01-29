@@ -1,6 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,400);
-@import url(//fonts.googleapis.com/css?family=Open+Sans:600,700);
-
 @font-face {
   font-family: "social";
   src: url("fonts/icomoon.eot");
@@ -48,9 +45,9 @@ body, html {
 	line-height: 1.7em;
 	height: 100%;
 	width: 100%;
-	font-family:'Brandon Grotesque',Helvetica,Arial,sans-serif;
+	font-family:'brandon-grotesque',Helvetica,Arial,sans-serif;
 	font-size: 1.0em;
-	background: #000000;
+	background: #151515;
 	position: relative;
 	text-align: center;
 	@include transition (background .6s ease);
@@ -62,57 +59,180 @@ img {
   max-width: 100%;
 }
 
+// LOADING ANIMATION
+
 .loading {
-	background: $white;
-	border: 20px solid $white;
+	background: #242424;
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	z-index: 15;
-	box-sizing: border-box;
+	z-index: 20;
 	opacity: 1;
 	overflow: hidden;
-	@include animation(fade_load .7s ease 1.5s 1 forwards);
-	.line1, .line3 {
-		background: $black;
-		width: 20px;
-		height: 100%;
-		@include transform(translateY(-100%));
-		left: 0;
+	visibility: visible;
+	@include transition(opacity .4s ease, visibility .1s linear .4s);
+	span {
 		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -20px;
+		margin-left: -20px;
+		display: block;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: #616161;
+		opacity: .5;
+		@include animation(pulse 1.3s $ease-out-quad 0s infinite forwards);
 	}
-	.line3 {
-		left: auto;
-		right: 0;
-		@include transform(translateY(100%));
+}
+
+.hide_load {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.bg_image {
+	position: absolute;
+	top: -2000px;
+	left: -20000px;
+}
+
+// HOMESLIDE LOCKUP 
+
+#section0 {
+	article {
+		display: none;
 	}
-	.line2, .line4 {
-		background: $black;
+	.show {
+		display: block;
+	}
+	figure {
 		width: 100%;
-		height: 20px;
-		@include transform(translateX(100%));
-		top: 0;
-		position: absolute;
-	}
-	.line2 {
-		top: auto;
+		height: 100%;
 		bottom: 0;
-		@include transform(translateX(-100%));
-	}
-	.line1 {
-		@include animation(line_one .3s linear 0s 1 forwards);
-	}
-	.line2 {
 		left: 0;
-		@include animation(line_two .3s linear .3s 1 forwards);
+		z-index: 14;
+		position: absolute;
+		background: url(../img/corey_black.jpg);
+		background-size: cover;
 	}
-	.line3 {
-		bottom: 0;
-		@include animation(line_three .3s linear .6s 1 forwards);
+	.top_box, .bottom_box {
+		width: 300px;
+		color: $white;
+		margin: 0 auto;
+		padding: 10px;
+		position: relative;
+		overflow: hidden;
+		h4 {
+			font-size: 20px;
+			font-family: 'Liberator', sans-serif;
+			letter-spacing: 3px;
+		}
+		h4, p {
+			@include transform(translateY(10px));
+			opacity: 0;
+			@include animation(fade_lockup .3s linear .7s 1 forwards);
+		}
+		.loader {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			.line1, .line2 {
+				width: 10px;
+				height: 100%;
+				background: $white;
+				left: 0;
+				top: 0;
+				position: absolute;
+			}
+			.line2 {
+				left: auto;
+				right: 0;
+			}
+			.line3 {
+				width: 100%;
+				height: 10px;
+				background: $white;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
 	}
-	.line4 {
-		right: 0;
-		@include animation(line_four .3s linear .9s 1 forwards);
+	.top_box {
+		border-bottom: 0;
+		padding-top: 45px;
+		z-index: 15;
+		h4 {
+			font-size: 16px;
+		}
+		.loader {
+			.line1 {
+				@include transform(translateY(100%));
+				@include animation(line_one .3s linear 0s 1 forwards);
+			}
+			.line3 {
+				@include transform(translateX(-100%));
+				@include animation(line_three .3s linear .3s 1 forwards);
+			}
+			.line2 {
+				@include transform(translateY(-100%));
+				@include animation(line_two .3s linear .6s 1 forwards);
+			}
+		}
+	}
+	.bottom_box {
+		border-top: 0;
+		padding-bottom: 45px;
+		z-index: 16;
+		p {
+			font-family: 'Adobe Garamond Pro', sans-serif;
+			font-style: italic;
+			padding: 0 0 60px;
+			color: $white;
+			&:after {
+				content: '';
+				width: 40px;
+				height: 3px;
+				background: $white;
+				position: absolute;
+				bottom: 30px;
+				left: 50%;
+				margin-left: -20px;
+			}
+		}
+		.loader {
+			.line1 {
+				@include transform(translateY(100%));
+				@include animation(line_one .3s linear .6s 1 forwards);
+			}
+			.line3 {
+				top: auto;
+				bottom: 0;
+				@include transform(translateX(100%));
+				@include animation(line_four .3s linear .3s 1 forwards);
+			}
+			.line2 {
+				@include transform(translateY(-100%));
+				@include animation(line_two .3s linear 0s 1 forwards);
+			}
+		}
+	}
+	h3 {
+		z-index: 17;
+		position: relative;
+		font-size: 4em;
+		line-height: 2em;
+		font-family: 'Liberator', sans-serif;
+		letter-spacing: 20px;
+		text-align: center;
+		color: $white;
+		@include transform(translateY(10px));
+		opacity: 0;
+		@include animation(fade_lockup .3s linear .7s 1 forwards);
 	}
 }
 

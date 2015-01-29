@@ -1,3 +1,17 @@
+// LOAD BACKGROUND AND COREY IMAGE BEFORE SHOWING SITE
+function imgLoaded() {
+	var bgImages = document.querySelectorAll('.bg_image');
+	imagesLoaded( bgImages, function() {
+		setTimeout(function() {
+			$('.loading').addClass('hide_load');
+			$('#section0 article').addClass('show');
+		}, 800);
+	});
+}
+imgLoaded();
+
+
+// WRAP CHARACTERS FR HOVER EFFECT
 function wrapCharacters(element) {
     $(element).contents().each(function() {
         if(this.nodeType === 1) {
@@ -10,7 +24,6 @@ function wrapCharacters(element) {
         }
     });
 } 
-
 
 $(document).ready(function() {
 
@@ -40,6 +53,7 @@ $(document).ready(function() {
 
 	// SEPERATE LETTERS INTO SPANS
 	wrapCharacters($('h2'));
+
 
 	// START FULLPAGE PLUGIN
 	$('#fullpage').fullpage({
@@ -80,7 +94,6 @@ $(document).ready(function() {
 	});   
 
 	// BACKGROUND-CLIP SUPPORT DETECTION
-
 	Modernizr.addTest('backgroundclip',function() {
 
 	    var div = document.createElement('div');
@@ -92,7 +105,7 @@ $(document).ready(function() {
 	      if (val+'BackgroundClip' in div.style) return true;
 	    });
 
-	  });
+	});
 
 	
 	// MOVE DOWN ON ARROW CLICK

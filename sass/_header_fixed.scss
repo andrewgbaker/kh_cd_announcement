@@ -8,12 +8,12 @@
 	background: #141414;
 	@include transition(background .3s ease .8s, opacity .5s ease .5s);
 	img {
-		opacity: .4;
+		opacity: 1;
 		@include transition(opacity .3s ease);
 	}
 	&:hover {
 		img {
-			opacity: 1;
+			opacity: .7;
 		}
 	}
 }
@@ -30,7 +30,7 @@
 	height: 40px;
 	z-index: 6;
 	border-radius: 50%;
-	border: 2px solid #5E5E5E;
+	border: 2px solid $white;
 	overflow: hidden;
 	cursor: pointer;
 	@include transition(border .3s ease, opacity .5s ease .5s);
@@ -57,7 +57,7 @@
 	    right:0;
 	}
 	p {
-		color: #5E5E5E;
+		color: $white;
 		line-height: 40px;
 		font-size: 1.7em;
 		font-weight: bold;
@@ -66,9 +66,9 @@
 		@include transition(opacity .7s $ease-out-quart 1s, color .3s ease);
 	}
 	&:hover {
-		border: 2px solid $white;
+		border: 2px solid #5E5E5E;
 		p {
-			color: $white;
+			color: #5E5E5E;
 		}
 	}
 }
@@ -149,7 +149,6 @@ aside {
 			-webkit-background-clip: none;
 			.line {
 				position: relative;
-				display: inline-block;
 			}
 			.strike_through {
 				&:after {
