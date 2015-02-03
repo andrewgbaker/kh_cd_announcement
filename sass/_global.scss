@@ -1,9 +1,12 @@
 @font-face {
-  font-family: "social";
-  src: url("fonts/icomoon.eot");
-  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.svg#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'social_icons';
+	src:url('/css/fonts/socials_3/icomoon.eot');
+	src:url('/css/fonts/socials_3/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/css/fonts/socials_3/icomoon.woff') format('woff'),
+		url('/css/fonts/socials_3/icomoon.ttf') format('truetype'),
+		url('/css/fonts/socials_3/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
@@ -62,7 +65,7 @@ img {
 // LOADING ANIMATION
 
 .loading {
-	background: #242424;
+	background: #151515;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -132,7 +135,7 @@ img {
 		h4, p {
 			@include transform(translateY(10px));
 			opacity: 0;
-			@include animation(fade_lockup .3s linear .7s 1 forwards);
+			@include animation(fade_lockup .3s linear 1.5s 1 forwards);
 		}
 		.loader {
 			position: absolute;
@@ -172,15 +175,15 @@ img {
 		.loader {
 			.line1 {
 				@include transform(translateY(100%));
-				@include animation(line_one .3s linear 0s 1 forwards);
+				@include animation(line_one .3s linear .8s 1 forwards);
 			}
 			.line3 {
 				@include transform(translateX(-100%));
-				@include animation(line_three .3s linear .3s 1 forwards);
+				@include animation(line_three .3s linear 1.1s 1 forwards);
 			}
 			.line2 {
 				@include transform(translateY(-100%));
-				@include animation(line_two .3s linear .6s 1 forwards);
+				@include animation(line_two .3s linear 1.4s 1 forwards);
 			}
 		}
 	}
@@ -207,17 +210,17 @@ img {
 		.loader {
 			.line1 {
 				@include transform(translateY(100%));
-				@include animation(line_one .3s linear .6s 1 forwards);
+				@include animation(line_one .3s linear 1.4s 1 forwards);
 			}
 			.line3 {
 				top: auto;
 				bottom: 0;
 				@include transform(translateX(100%));
-				@include animation(line_four .3s linear .3s 1 forwards);
+				@include animation(line_four .3s linear 1.1s 1 forwards);
 			}
 			.line2 {
 				@include transform(translateY(-100%));
-				@include animation(line_two .3s linear 0s 1 forwards);
+				@include animation(line_two .3s linear .8s 1 forwards);
 			}
 		}
 	}
@@ -232,7 +235,71 @@ img {
 		color: $white;
 		@include transform(translateY(10px));
 		opacity: 0;
-		@include animation(fade_lockup .3s linear .7s 1 forwards);
+		@include animation(fade_lockup .3s linear 1.5s 1 forwards);
+	}
+}
+
+#logo_page {
+	.fp-tableCell {
+		margin-top: -300px;
+	}
+}
+
+
+.logo_anim {
+	width: 304px;
+	height: 58px;
+	position: relative;
+	margin: 40px auto 0;
+	overflow: hidden;
+	img {
+		opacity: 0;
+		width: 300px;
+		height: 54px;
+		margin-left: 2px;
+		margin-top: 2px;
+		@include transition(opacity .2s linear 1.9s)
+	}
+	.line1, .line3 {
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 2px;
+		background: $white;
+		position: absolute;
+		@include transform(translateY(100%));
+		@include transition(all .5s linear .7s)
+	}
+	.line3 {
+		left: auto;
+		right: 0;
+		@include transform(translateY(-100%));
+	}
+	.line2, .line4 {
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 2px;
+		background: $white;
+		position: absolute;
+		@include transform(translateX(100%));
+		@include transition(all .5s linear 1.3s)
+	}
+	.line4 {
+		top: auto;
+		bottom: 0;
+		@include transform(translateX(-100%));
+	}
+}
+.fp-viewing-closing .logo_anim {
+	img {
+		opacity: 1;
+	}
+	.line1, .line3 {
+		@include transform(translateY(0%));
+	}
+	.line2, .line4 {
+		@include transform(translateX(0%));
 	}
 }
 

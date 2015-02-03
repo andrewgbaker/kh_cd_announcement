@@ -27,30 +27,6 @@ function wrapCharacters(element) {
 
 $(document).ready(function() {
 
-	// OPEN INFO PANEL
-
-	$('.info').on('click', function(){
-
-		if ($('body').hasClass('info_open')) {
-			$('aside').toggleClass('slide_down');
-	    	setTimeout(function() {
-	    		$('.line').toggleClass('strike_through');
-				setTimeout(function() {
-					$('body').toggleClass('info_open');
-				}, 800);
-			}, 100);
-	   	}
-		else {
-		    $('body').toggleClass('info_open');
-		    setTimeout(function() {
-				$('.line').toggleClass('strike_through');
-				setTimeout(function() {
-					$('aside').toggleClass('slide_down');
-				}, 800);
-			}, 100);
-		}
-	});
-
 	// SEPERATE LETTERS INTO SPANS
 	wrapCharacters($('h2'));
 
@@ -58,40 +34,60 @@ $(document).ready(function() {
 	// START FULLPAGE PLUGIN
 	$('#fullpage').fullpage({
 		// css3: false,
-		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+		anchors: ['landing', 'intro', 'quote1', 'quote2', 'quote3', 'closing'],
 		verticalCentered: true,
 		scrollingSpeed: 800,
 		recordHistory: false,
 		easingcss3: 'cubic-bezier(0.895, 0.030, 0.685, 0.220)'
-		// onLeave: function(index, nextIndex, direction){
+		// afterLoad: function(anchorLink, index){
+  //           var lastArrow = $('.arrow');
 
-		// 	var bodyColor = $('body')
-		// 		upQuote = $('.active h2');
-  //           //after leaving section 2
-  //           if(index == 1 && direction =='down'){
-  //               bodyColor.toggleClass('go_black');
+  //           //using index
+  //           if(index == 6){
+  //               lastArrow.on('click', function(){
+		// 			console.log('testclick');
+		// 			$.fn.fullpage.moveSectionUp();
+		// 		});
+  //           }
+  //           //using index
+  //           if(index != 6){
+  //               lastArrow.on('click', function(){
+		// 			console.log('testclick');
+		// 			$.fn.fullpage.moveSectionDown();
+		// 		});
   //           }
 
-  //           else if(index == 2 && direction == 'up'){
-  //               bodyColor.toggleClass('go_black');
-  //               upQuote.toggleClass('quote_up');
-  //           }
-  //           else if(index == 2 && direction == 'down'){
-  //               bodyColor.toggleClass('go_black');
-  //           }
-  //           else if(index == 3 && direction == 'up'){
-  //               bodyColor.toggleClass('go_black');
-  //               upQuote.toggleClass('quote_up');
-  //           }
-  //           else if(index == 3 && direction == 'down'){
-  //               bodyColor.toggleClass('go_black');
-  //           }
-  //           else if(index == 4 && direction == 'up'){
-  //               bodyColor.toggleClass('go_black');
-  //               upQuote.toggleClass('quote_up');
-  //           }
   //       }
 	});   
+
+	// OPEN INFO PANEL
+
+	function openPanel() {
+		$('.info').on('click', function(){
+
+			if ($('body').hasClass('info_open')) {
+				$('aside').toggleClass('slide_down');
+		    	setTimeout(function() {
+		    		$('.line').toggleClass('strike_through');
+					setTimeout(function() {
+						$('body').toggleClass('info_open');
+					}, 400);
+				}, 100);
+				$.fn.fullpage.setAllowScrolling(true);
+		   	}
+			else {
+			    $('body').toggleClass('info_open');
+			    setTimeout(function() {
+					$('.line').toggleClass('strike_through');
+					setTimeout(function() {
+						$('aside').toggleClass('slide_down');
+					}, 800);
+				}, 100);
+				$.fn.fullpage.setAllowScrolling(false);
+			}
+		});
+	}
+	openPanel();
 
 	// BACKGROUND-CLIP SUPPORT DETECTION
 	Modernizr.addTest('backgroundclip',function() {
@@ -107,9 +103,39 @@ $(document).ready(function() {
 
 	});
 
+	// function arrowClickLast() {
+	// 	var arrowLast = $('.fp-viewing-closing > .arrow');
+
+
+	// 	arrowLast.on('click', function(){
+	// 		console.log('testclick');
+	// 		$.fn.fullpage.moveSectionUp();
+	// 	});
+	// }
+	// setTimeout(function() {
+	// 	arrowClickLast();
+	// }, 200);
+
 	
 	// MOVE DOWN ON ARROW CLICK
-    $('.arrow').on('click', function(){
-		$.fn.fullpage.moveSectionDown();
-	});
+	function arrowClick() {
+		var arrow = $('.arrow');
+
+	    arrow.on('click', function(){
+			$.fn.fullpage.moveSectionDown();
+		});
+
+	}
+	arrowClick();
+
+	function lastArrow() {
+		var arrow = $('.arrow_up');
+
+	    arrow.on('click', function(){
+			$.fn.fullpage.moveSectionUp();
+		});
+
+	}
+	lastArrow();
+
 });

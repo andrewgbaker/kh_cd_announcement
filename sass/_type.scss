@@ -1,3 +1,19 @@
+[data-icon]:before {
+  font-family: "social_icons";
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+p {
+	width: 90%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
 h2 {
 	font-size:5.0em;
 	line-height: 1em;
@@ -113,6 +129,8 @@ h1 {
 		background: none;
 		background: -webkit-linear-gradient(transparent, transparent),
              url('../img/bg_nightcity.jpg') no-repeat center center;
+        background: -webkit-linear-gradient(transparent, transparent),
+             url('http://i.imgur.com/3W7yR.jpg') no-repeat center center;
 		background-size: cover;
 		-webkit-background-clip: text;
 	}
@@ -165,11 +183,17 @@ h1 {
 		line-height: 1.2em;
 		font-weight: 300;
 		text-transform: none;
+		span {
+			color: rgba(255, 255, 255, .5);
+			&:hover {
+				color: rgba(255, 255, 255, 0);
+			}
+		}
 	}
 }
 
 h2 span {
-	color: rgba(236, 236, 236, 0.5);
+	color: rgba(63, 63, 63, .85);
 	/*text-shadow: 1px -1px 1px rgba(0, 0, 0, .5);*/
 	-webkit-transition:color .2s linear .5s;
 	-moz-transition: color .2s linear .5s;
@@ -190,7 +214,7 @@ h2 span {
 // }
 
 h2 span:hover {
-	color: rgba(236, 236, 236, 0);
+	color: rgba(63, 63, 63, 0);
 	/*text-shadow: 1px -1px 1px rgba(0, 0, 0, 0);*/
 	-webkit-transition:color .2s linear 0;
 	-moz-transition: color .2s linear 0;
